@@ -20,6 +20,8 @@
             color: #222;
         }
 
+        /* Navigation */
+
         nav {
             position: fixed;
             top: 0;
@@ -53,11 +55,14 @@
             opacity: 0.5;
         }
 
+        /* Language Button */
+
         .language-button {
             margin-left: 30px;
             padding: 7px 12px;
             border: 1px solid #222;
             background: transparent;
+            color: #222;
             cursor: pointer;
             font-size: 12px;
         }
@@ -66,6 +71,8 @@
             background-color: #222;
             color: white;
         }
+
+        /* Hero */
 
         .hero {
             height: 100vh;
@@ -88,6 +95,8 @@
             max-width: 650px;
         }
 
+        /* Sections */
+
         .section {
             padding: 120px 50px;
         }
@@ -97,6 +106,8 @@
             font-weight: 500;
             margin-bottom: 50px;
         }
+
+        /* Work */
 
         .work-list {
             display: grid;
@@ -113,11 +124,19 @@
             font-size: 24px;
         }
 
+        .work-item:hover {
+            background-color: #d8d6cf;
+        }
+
+        /* About */
+
         .about-text {
             max-width: 700px;
             font-size: 20px;
             line-height: 1.7;
         }
+
+        /* Footer */
 
         footer {
             padding: 50px;
@@ -126,19 +145,27 @@
             line-height: 1.8;
         }
 
+        /* Mobile */
+
         @media (max-width: 700px) {
 
             nav {
                 padding: 20px;
             }
 
+            nav .logo {
+                font-size: 14px;
+            }
+
             nav .links a {
                 margin-left: 10px;
-                font-size: 12px;
+                font-size: 11px;
             }
 
             .language-button {
                 margin-left: 10px;
+                padding: 6px 9px;
+                font-size: 11px;
             }
 
             .hero {
@@ -164,6 +191,10 @@
             .work-list {
                 grid-template-columns: 1fr;
             }
+
+            .about-text {
+                font-size: 17px;
+            }
         }
     </style>
 </head>
@@ -171,23 +202,41 @@
 
 <body>
 
+
     <!-- Navigation -->
 
     <nav>
 
         <div class="logo">
-            YUETONG ZHAO
+            <span data-en="YUETONG ZHAO" data-zh="赵悦桐">
+                YUETONG ZHAO
+            </span>
         </div>
+
 
         <div class="links">
 
-            <a href="#work" data-en="WORK" data-zh="作品">WORK</a>
+            <a href="#work"
+               data-en="WORK"
+               data-zh="作品">
+                WORK
+            </a>
 
-            <a href="#about" data-en="ABOUT" data-zh="关于">ABOUT</a>
+            <a href="#about"
+               data-en="ABOUT"
+               data-zh="关于">
+                ABOUT
+            </a>
 
-            <a href="#contact" data-en="CONTACT" data-zh="联系">CONTACT</a>
+            <a href="#contact"
+               data-en="CONTACT"
+               data-zh="联系">
+                CONTACT
+            </a>
 
-            <button class="language-button" onclick="switchLanguage()">
+
+            <button class="language-button"
+                    onclick="switchLanguage()">
                 中文
             </button>
 
@@ -196,18 +245,22 @@
     </nav>
 
 
-    <!-- Hero -->
+
+    <!-- Hero Section -->
 
     <section class="hero">
 
-        <h1>
+        <h1
+            data-en="Yuetong Zhao"
+            data-zh="赵悦桐">
             Yuetong Zhao
         </h1>
+
 
         <p
             data-en="Visual Studies Artist<br>Animation · Storyboard · Visual Storytelling"
             data-zh="视觉研究艺术家<br>动画 · 分镜 · 视觉叙事">
-            
+
             Visual Studies Artist<br>
             Animation · Storyboard · Visual Storytelling
 
@@ -216,28 +269,26 @@
     </section>
 
 
-    <!-- Work -->
+
+    <!-- Work Section -->
 
     <section class="section" id="work">
 
         <h2
             data-en="Selected Work"
             data-zh="精选作品">
-            
             Selected Work
-
         </h2>
 
 
         <div class="work-list">
 
+
             <div
                 class="work-item"
                 data-en="Animation"
                 data-zh="动画">
-                
                 Animation
-
             </div>
 
 
@@ -245,9 +296,7 @@
                 class="work-item"
                 data-en="Storyboard"
                 data-zh="分镜">
-                
                 Storyboard
-
             </div>
 
 
@@ -255,9 +304,7 @@
                 class="work-item"
                 data-en="Character Design"
                 data-zh="角色设计">
-                
                 Character Design
-
             </div>
 
 
@@ -265,26 +312,24 @@
                 class="work-item"
                 data-en="Environment Design"
                 data-zh="场景设计">
-                
                 Environment Design
-
             </div>
+
 
         </div>
 
     </section>
 
 
-    <!-- About -->
+
+    <!-- About Section -->
 
     <section class="section" id="about">
 
         <h2
             data-en="About"
             data-zh="关于我">
-            
             About
-
         </h2>
 
 
@@ -302,30 +347,29 @@
     </section>
 
 
-    <!-- Contact -->
+
+    <!-- Contact Section -->
 
     <footer id="contact">
 
         <p
             data-en="Yuetong Zhao"
-            data-zh="Yuetong Zhao">
-            
+            data-zh="赵悦桐">
             Yuetong Zhao
-
         </p>
+
 
         <p
             data-en="Visual Studies · Ringling College of Art and Design"
             data-zh="Visual Studies · Ringling College of Art and Design">
-            
             Visual Studies · Ringling College of Art and Design
-
         </p>
 
     </footer>
 
 
-    <!-- Language Switch -->
+
+    <!-- Language Switch Script -->
 
     <script>
 
@@ -345,19 +389,22 @@
             }
 
 
-            const elements = document.querySelectorAll("[data-en]");
+            const elements =
+                document.querySelectorAll("[data-en]");
 
 
             elements.forEach(function(element) {
 
-                element.innerHTML = element.getAttribute(
-                    "data-" + currentLanguage
-                );
+                element.innerHTML =
+                    element.getAttribute(
+                        "data-" + currentLanguage
+                    );
 
             });
 
 
-            const button = document.querySelector(".language-button");
+            const button =
+                document.querySelector(".language-button");
 
 
             if (currentLanguage === "en") {
