@@ -1,16 +1,208 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Yuetong Zhao</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Yuetong Zhao | Visual Studies</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f7f6f2;
+            color: #222;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 25px 50px;
+            display: flex;
+            justify-content: space-between;
+            background-color: rgba(247, 246, 242, 0.95);
+            z-index: 100;
+        }
+
+        nav .logo {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        nav .links a {
+            margin-left: 30px;
+            text-decoration: none;
+            color: #222;
+            font-size: 14px;
+        }
+
+        nav .links a:hover {
+            opacity: 0.5;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 50px;
+        }
+
+        .hero h1 {
+            font-size: 80px;
+            font-weight: 500;
+            line-height: 1;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            line-height: 1.6;
+            max-width: 600px;
+        }
+
+        .section {
+            padding: 120px 50px;
+        }
+
+        .section h2 {
+            font-size: 40px;
+            font-weight: 500;
+            margin-bottom: 50px;
+        }
+
+        .work-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .work-item {
+            min-height: 250px;
+            background-color: #e5e3dc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .about-text {
+            max-width: 700px;
+            font-size: 20px;
+            line-height: 1.7;
+        }
+
+        footer {
+            padding: 50px;
+            border-top: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        @media (max-width: 700px) {
+            nav {
+                padding: 20px;
+            }
+
+            nav .links a {
+                margin-left: 10px;
+            }
+
+            .hero {
+                padding: 30px;
+            }
+
+            .hero h1 {
+                font-size: 50px;
+            }
+
+            .section {
+                padding: 80px 30px;
+            }
+
+            .work-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>Yuetong Zhao</h1>
+    <nav>
+        <div class="logo">YUETONG ZHAO</div>
 
-    <p>Visual Studies / Animation</p>
+        <div class="links">
+            <a href="#work">WORK</a>
+            <a href="#about">ABOUT</a>
+            <a href="#contact">CONTACT</a>
+        </div>
+    </nav>
 
-    <p>Welcome to my portfolio.</p>
+
+    <section class="hero">
+
+        <h1>Yuetong Zhao</h1>
+
+        <p>
+            Visual Studies Artist<br>
+            Animation · Storyboard · Visual Storytelling
+        </p>
+
+    </section>
+
+
+    <section class="section" id="work">
+
+        <h2>Selected Work</h2>
+
+        <div class="work-list">
+
+            <div class="work-item">
+                Animation
+            </div>
+
+            <div class="work-item">
+                Storyboard
+            </div>
+
+            <div class="work-item">
+                Character Design
+            </div>
+
+            <div class="work-item">
+                Environment Design
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="section" id="about">
+
+        <h2>About</h2>
+
+        <p class="about-text">
+            I am a Visual Studies student at Ringling College of Art and Design.
+            My work focuses on animation, storyboard design, character design,
+            environment design, and visual storytelling.
+        </p>
+
+    </section>
+
+
+    <footer id="contact">
+
+        <p>Yuetong Zhao</p>
+        <p>Visual Studies · Ringling College of Art and Design</p>
+
+    </footer>
 
 </body>
 </html>
