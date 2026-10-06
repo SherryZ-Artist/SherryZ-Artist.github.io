@@ -127,3 +127,23 @@ footer span{display:block;margin:5px 0}
   height: 100%;
   border: none;
 }
+
+/* Storyboard Cover */
+
+.storyboard-cover {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.storyboard-cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.work-card:hover .storyboard-cover img {
+  transform: scale(1.03);
+}
