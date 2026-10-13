@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,52 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Storyboard | Yuetong Zhao</title>
 <link rel="stylesheet" href="../style.css">
+
+<style>
+  .storyboard-project {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto 50px;
+  }
+
+  .storyboard-project h2 {
+    margin: 0 0 16px;
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+
+  .storyboard-pdf,
+  .storyboard-video {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto 30px;
+  }
+
+  .storyboard-pdf {
+    aspect-ratio: 16 / 9;
+  }
+
+  .storyboard-pdf iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .storyboard-video video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    object-fit: contain;
+    background: #000;
+  }
+
+  .pdf-button {
+    display: inline-block;
+    margin: 0 0 40px;
+  }
+</style>
 </head>
 
 <body class="project-page">
@@ -35,7 +82,6 @@
 <main>
 
 <section class="project-hero">
-
   <p class="eyebrow">
     <span class="en">PROJECT</span>
     <span class="zh">项目</span>
@@ -50,76 +96,107 @@
     <span class="en">
       Storyboard work, beatboards, visual storytelling, and selected sequences.
     </span>
-
     <span class="zh">
       这里展示分镜、Beatboards、视觉叙事和精选镜头。
     </span>
   </div>
-
 </section>
-
 
 <section class="project-content">
 
-  <!-- Storyboard PDF -->
+  <!-- Micro Rave PDF -->
+  <div class="storyboard-project">
+    <h2>
+      <span class="en">Micro Rave</span>
+      <span class="zh">微波舞步</span>
+    </h2>
 
-  <div class="storyboard-pdf">
-    <iframe
-      src="../images/storyboard/B1.pdf"
-      title="Storyboard B1">
-    </iframe>
+    <div class="storyboard-pdf">
+      <iframe
+        src="../images/storyboard/B1.pdf"
+        title="Micro Rave Storyboard">
+      </iframe>
+    </div>
+
+    <a
+      class="pdf-button"
+      href="../images/storyboard/B1.pdf"
+      target="_blank"
+      rel="noopener">
+      <span class="en">View Full Storyboard PDF</span>
+      <span class="zh">查看完整 Storyboard PDF</span>
+    </a>
   </div>
 
-  <!-- Open PDF -->
+  <!-- Seamless Tape -->
+  <div class="storyboard-project">
+    <h2>
+      <span class="en">Seamless Tape</span>
+      <span class="zh">无缝胶带</span>
+    </h2>
 
-  <a
-    class="pdf-button"
-    href="../images/storyboard/B1.pdf"
-    target="_blank">
+    <div class="storyboard-video">
+      <video controls playsinline preload="metadata">
+        <source src="../videos/SeamlessTape无缝胶带.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
 
-    <span class="en">View Full Storyboard PDF</span>
-    <span class="zh">查看完整 Storyboard PDF</span>
+  <!-- Sliced Love -->
+  <div class="storyboard-project">
+    <h2>
+      <span class="en">Sliced Love</span>
+      <span class="zh">切心之爱</span>
+    </h2>
 
-  </a>
+    <div class="storyboard-video">
+      <video controls playsinline preload="metadata">
+        <source src="../videos/SlicedLove切心之爱.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
 
+  <!-- Dear Quilt -->
+  <div class="storyboard-project">
+    <h2>
+      <span class="en">Dear Quilt</span>
+      <span class="zh">亲爱的被子君</span>
+    </h2>
+
+    <div class="storyboard-video">
+      <video controls playsinline preload="metadata">
+        <source src="../videos/DearQuilt亲爱的被子君.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
 
   <p class="project-description">
-
     <span class="en">
       Storyboard work, beatboards, visual storytelling, and selected sequences.
     </span>
-
     <span class="zh">
       这里展示分镜、Beatboards、视觉叙事和精选镜头。
     </span>
-
   </p>
 
-
   <a class="back-link" href="../index.html#work">
-
     <span class="en">← Back to Work</span>
-
     <span class="zh">← 返回作品</span>
-
   </a>
 
 </section>
-
 </main>
 
-
 <footer>
-
   <span>© 2026 Yuetong Zhao</span>
-
-  <span>
-    Visual Studies · Ringling College of Art and Design
-  </span>
-
+  <span>Visual Studies · Ringling College of Art and Design</span>
 </footer>
 
 <script src="../script.js"></script>
 
 </body>
 </html>
+```
