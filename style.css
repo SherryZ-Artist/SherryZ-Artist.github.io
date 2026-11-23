@@ -186,3 +186,17 @@ footer span{display:block;margin:5px 0}
   aspect-ratio: 16 / 9;
 }
 ```
+/* Thesis Final Film */
+.thesis-video {
+  width: 100%;
+  margin: 30px 0;
+  background: #000;
+}
+
+.thesis-video video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+}
