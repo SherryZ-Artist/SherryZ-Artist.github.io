@@ -6,6 +6,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yuetong Zhao | Portfolio</title>
 <link rel="stylesheet" href="style.css">
+  <style>
+/* Homepage Background Image */
+body:not(.project-page)::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50vw;
+  height: 100vh;
+  background-image: url("images/animation/自画像.png");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: contain;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: -1;
+}
+</style>
 </head>
 <body>
 
