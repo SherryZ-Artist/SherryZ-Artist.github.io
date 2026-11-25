@@ -1,217 +1,597 @@
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Storyboard | Yuetong Zhao</title>
-<link rel="stylesheet" href="../style.css">
 
-<style>
-  .storyboard-project {
-    width: 100%;
-    max-width: 1280px;
-    margin: 0 auto 50px;
+/* ========================================
+   GLOBAL SETTINGS
+======================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f3ef;
+  color: #171717;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* ========================================
+   HEADER & NAVIGATION
+======================================== */
+
+.site-header {
+  height: 78px;
+  padding: 0 6vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #d8d5cf;
+  position: sticky;
+  top: 0;
+  background: rgba(245, 243, 239, .94);
+  backdrop-filter: blur(10px);
+  z-index: 20;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -.02em;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-size: 12px;
+  letter-spacing: .12em;
+}
+
+nav a {
+  transition: opacity .2s;
+}
+
+nav a:hover {
+  opacity: .5;
+}
+
+.lang-btn {
+  border: 1px solid #171717;
+  background: transparent;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+
+/* ========================================
+   HOMEPAGE HERO
+======================================== */
+
+.hero {
+  padding: 15vh 6vw 12vh;
+  max-width: 1000px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: .16em;
+  color: #777;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-size: clamp(58px, 10vw, 140px);
+  font-weight: 500;
+  letter-spacing: -.07em;
+  line-height: .9;
+}
+
+.hero-text {
+  max-width: 620px;
+  font-size: 19px;
+  margin-top: 36px;
+  color: #555;
+}
+
+
+/* ========================================
+   HOMEPAGE SECTIONS
+======================================== */
+
+.section {
+  padding: 9vw 6vw;
+  border-top: 1px solid #d8d5cf;
+}
+
+.section-title {
+  margin-bottom: 50px;
+}
+
+.section-title h2 {
+  font-size: clamp(38px, 5vw, 68px);
+  font-weight: 500;
+  letter-spacing: -.04em;
+}
+
+
+/* ========================================
+   WORK GRID
+======================================== */
+
+.work-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.work-card {
+  display: block;
+}
+
+.card-media {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #ddd;
+}
+
+.card-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #dedbd4;
+  color: #777;
+  font-size: 12px;
+  letter-spacing: .18em;
+  transition: transform .4s, background .4s;
+}
+
+.work-card:hover .placeholder {
+  background: #d1cec7;
+}
+
+
+/* Storyboard Cover */
+
+.storyboard-cover {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.storyboard-cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .3s ease;
+}
+
+.work-card:hover .storyboard-cover img {
+  transform: scale(1.03);
+}
+
+
+/* Work Card Text */
+
+.card-info {
+  padding: 18px 0 30px;
+}
+
+.card-info > span {
+  font-size: 11px;
+  color: #888;
+}
+
+.card-info h3 {
+  font-size: 27px;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.card-info p {
+  color: #777;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+
+/* ========================================
+   ABOUT SECTION
+======================================== */
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 8vw;
+}
+
+.about .section-title {
+  margin-bottom: 0;
+}
+
+.about-text {
+  font-size: 22px;
+  max-width: 720px;
+}
+
+.about-text p + p {
+  margin-top: 28px;
+}
+
+
+/* ========================================
+   CONTACT SECTION
+======================================== */
+
+.contact {
+  padding-bottom: 13vw;
+}
+
+.contact h2 {
+  font-size: clamp(40px, 6vw, 80px);
+  font-weight: 500;
+  letter-spacing: -.05em;
+}
+
+.contact > p:not(.eyebrow) {
+  color: #666;
+  margin: 18px 0;
+}
+
+.email {
+  font-size: 20px;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+  padding: 30px 6vw;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #d8d5cf;
+  color: #888;
+  font-size: 11px;
+}
+
+
+/* ========================================
+   LANGUAGE SWITCHING
+======================================== */
+
+.zh {
+  display: none;
+}
+
+body.zh-mode .en {
+  display: none;
+}
+
+body.zh-mode .zh {
+  display: inline;
+}
+
+body.zh-mode .en.hero-text,
+body.zh-mode p.en {
+  display: none;
+}
+
+
+/* ========================================
+   PROJECT PAGE GENERAL
+======================================== */
+
+.project-page {
+  min-height: 100vh;
+}
+
+.project-hero {
+  padding: 10vw 6vw 6vw;
+}
+
+.project-hero h1 {
+  font-size: clamp(52px, 9vw, 120px);
+  font-weight: 500;
+  letter-spacing: -.06em;
+  line-height: .9;
+}
+
+.project-meta {
+  margin-top: 28px;
+  color: #777;
+  max-width: 700px;
+}
+
+.project-content {
+  padding: 0 6vw 10vw;
+}
+
+.project-description {
+  max-width: 760px;
+  font-size: 19px;
+  margin: 50px 0;
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.project-gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 60px;
+  font-size: 13px;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+
+/* ========================================
+   UNIFIED MEDIA LAYOUT
+   Animation / Storyboard / Thesis
+======================================== */
+
+.video-item,
+.storyboard-project,
+.thesis-poster,
+.thesis-video,
+.storyboard-pdf {
+  width: 100%;
+  max-width: 1280px;
+  margin: 30px auto 50px;
+}
+
+
+/* ----------------------------------------
+   POSTER
+   Original image ratio, no cropping
+---------------------------------------- */
+
+.thesis-poster {
+  text-align: center;
+}
+
+.thesis-poster img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+
+/* ----------------------------------------
+   PDF
+   Unified 16:9 viewing area
+---------------------------------------- */
+
+.storyboard-pdf {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #e5e2dc;
+}
+
+.storyboard-pdf iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
+/* PDF Button */
+
+.pdf-button {
+  display: inline-block;
+  padding: 12px 20px;
+  border: 1px solid #222;
+  text-decoration: none;
+  color: #222;
+  margin-bottom: 50px;
+}
+
+.pdf-button:hover {
+  background: #222;
+  color: white;
+}
+
+
+/* PDF Link */
+
+.pdf-link {
+  margin: 15px 0 35px;
+  text-align: right;
+}
+
+.pdf-link a {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+/* ----------------------------------------
+   VIDEO
+   Unified 16:9 viewing area
+---------------------------------------- */
+
+.project-video,
+.storyboard-video video,
+.thesis-video video {
+  display: block;
+  width: 100%;
+  max-width: 1280px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: #000;
+  margin: 0 auto;
+}
+
+.thesis-video,
+.storyboard-video {
+  width: 100%;
+  max-width: 1280px;
+  margin: 30px auto 50px;
+}
+
+.storyboard-video {
+  aspect-ratio: auto;
+}
+
+.storyboard-video h2 {
+  margin: 0 0 12px;
+  font-size: 1.25rem;
+}
+
+
+/* ----------------------------------------
+   STORYBOARD PROJECT
+---------------------------------------- */
+
+.storyboard-project {
+  margin-bottom: 70px;
+}
+
+.storyboard-project h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 900px) {
+
+  .about {
+    grid-template-columns: 1fr;
   }
 
-  .storyboard-project h2 {
-    margin: 0 0 16px;
-    font-size: 1.4rem;
-    font-weight: 500;
+  .about .section-title {
+    margin-bottom: 40px;
   }
 
-  .storyboard-pdf,
-  .storyboard-video {
-    width: 100%;
-    max-width: 1280px;
-    margin: 0 auto 30px;
+}
+
+
+@media (max-width: 700px) {
+
+  .site-header {
+    height: auto;
+    min-height: 70px;
+    padding: 15px 5vw;
+    align-items: flex-start;
+  }
+
+  nav {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .hero {
+    padding: 18vh 5vw 12vh;
+  }
+
+  .work-grid,
+  .project-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .about {
+    display: block;
+  }
+
+  .about .section-title {
+    margin-bottom: 40px;
+  }
+
+  .about-text {
+    font-size: 18px;
+  }
+
+  footer {
+    display: block;
+  }
+
+  footer span {
+    display: block;
+    margin: 5px 0;
+  }
+
+  .project-hero {
+    padding: 15vw 5vw 8vw;
+  }
+
+  .project-content {
+    padding: 0 5vw 15vw;
   }
 
   .storyboard-pdf {
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 4 / 3;
   }
 
-  .storyboard-pdf iframe {
-    display: block;
-    width: 100%;
-    height: 100%;
-    border: none;
+  .storyboard-project h2 {
+    font-size: 23px;
   }
 
-  .storyboard-video video {
-    display: block;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    height: auto;
-    object-fit: contain;
-    background: #000;
+}
+
+
+@media (max-width: 480px) {
+
+  .site-header {
+    flex-direction: column;
+    gap: 12px;
   }
 
-  .pdf-button {
-    display: inline-block;
-    margin: 0 0 40px;
+  nav {
+    justify-content: flex-start;
   }
-</style>
-</head>
 
-<body class="project-page">
+  .hero h1 {
+    font-size: 58px;
+  }
 
-<header class="site-header">
-  <a class="logo" href="../index.html">Yuetong Zhao</a>
+  .project-hero h1 {
+    font-size: 48px;
+  }
 
-  <nav>
-    <a href="../index.html#work">
-      <span class="en">WORK</span>
-      <span class="zh">作品</span>
-    </a>
+  .storyboard-pdf {
+    aspect-ratio: 3 / 4;
+  }
 
-    <a href="../index.html#about">
-      <span class="en">ABOUT</span>
-      <span class="zh">关于我</span>
-    </a>
-
-    <a href="../index.html#contact">
-      <span class="en">CONTACT</span>
-      <span class="zh">联系方式</span>
-    </a>
-
-    <button class="lang-btn" onclick="switchLanguage()">中文 / EN</button>
-  </nav>
-</header>
-
-<main>
-
-<section class="project-hero">
-  <p class="eyebrow">
-    <span class="en">PROJECT</span>
-    <span class="zh">项目</span>
-  </p>
-
-  <h1>
-    <span class="en">Storyboard</span>
-    <span class="zh">分镜</span>
-  </h1>
-
-  <div class="project-meta">
-    <span class="en">
-      Storyboard work, beatboards, visual storytelling, and selected sequences.
-    </span>
-    <span class="zh">
-      这里展示分镜、Beatboards、视觉叙事和精选镜头。
-    </span>
-  </div>
-</section>
-
-<section class="project-content">
-
-  <!-- 01 Micro Rave PDF -->
-  <div class="storyboard-project">
-    <h2>
-      <span class="en">Micro Rave</span>
-      <span class="zh">微波舞步</span>
-    </h2>
-
-    <div class="storyboard-pdf">
-      <iframe
-        src="../images/storyboard/B1.pdf"
-        title="Micro Rave Storyboard">
-      </iframe>
-    </div>
-
-    <a
-      class="pdf-button"
-      href="../images/storyboard/B1.pdf"
-      target="_blank"
-      rel="noopener">
-      <span class="en">View Full Storyboard PDF</span>
-      <span class="zh">查看完整 Storyboard PDF</span>
-    </a>
-  </div>
-
-  <!-- 02 Seamless Tape -->
-  <div class="storyboard-project">
-    <h2>
-      <span class="en">Seamless Tape</span>
-      <span class="zh">无缝胶带</span>
-    </h2>
-
-    <div class="storyboard-video">
-      <video controls playsinline preload="metadata">
-        <source src="../images/storyboard/SeamlessTape无缝胶带.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  </div>
-
-  <!-- 03 Sliced Love -->
-  <div class="storyboard-project">
-    <h2>
-      <span class="en">Sliced Love</span>
-      <span class="zh">切心之爱</span>
-    </h2>
-
-    <div class="storyboard-video">
-      <video controls playsinline preload="metadata">
-        <source src="../images/storyboard/SlicedLove切心之爱.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  </div>
-
-  <!-- 04 Dear Quilt -->
-  <div class="storyboard-project">
-    <h2>
-      <span class="en">Dear Quilt</span>
-      <span class="zh">亲爱的被子君</span>
-    </h2>
-
-    <div class="storyboard-video">
-      <video controls playsinline preload="metadata">
-        <source src="../images/storyboard/DearQuilt亲爱的被子君.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  </div>
-
-  <!-- 05 Micro Rave Video -->
-  <div class="storyboard-project">
-    <h2>
-      <span class="en">Micro Rave</span>
-      <span class="zh">微波舞步</span>
-    </h2>
-
-    <div class="storyboard-video">
-      <video controls playsinline preload="metadata">
-        <source src="../images/storyboard/MicroRave微波舞步.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  </div>
-
-  <p class="project-description">
-    <span class="en">
-      Storyboard work, beatboards, visual storytelling, and selected sequences.
-    </span>
-    <span class="zh">
-      这里展示分镜、Beatboards、视觉叙事和精选镜头。
-    </span>
-  </p>
-
-  <a class="back-link" href="../index.html#work">
-    <span class="en">← Back to Work</span>
-    <span class="zh">← 返回作品</span>
-  </a>
-
-</section>
-</main>
-
-<footer>
-  <span>© 2026 Yuetong Zhao</span>
-  <span>Visual Studies · Ringling College of Art and Design</span>
-</footer>
-
-<script src="../script.js"></script>
-
-</body>
-</html>
-```
+}
