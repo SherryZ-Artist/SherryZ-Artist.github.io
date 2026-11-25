@@ -716,3 +716,17 @@ body.zh-mode p.en {
     grid-template-columns: 1fr;
   }
 }
+/* Thesis Character Design */
+
+.character-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.character-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
