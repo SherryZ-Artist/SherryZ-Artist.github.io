@@ -310,6 +310,7 @@ body.zh-mode p.en {
   min-height: 100vh;
 }
 
+
 /* Project Hero */
 
 .project-hero {
@@ -379,6 +380,22 @@ body.zh-mode p.en {
 
 
 /* ========================================
+   THESIS SECTIONS
+======================================== */
+
+.thesis-section {
+  width: 100%;
+  margin-bottom: 85px;
+}
+
+.thesis-section h2 {
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+
+/* ========================================
    UNIFIED MEDIA LAYOUT
    Animation / Storyboard / Thesis
 ======================================== */
@@ -390,7 +407,8 @@ body.zh-mode p.en {
 .storyboard-pdf,
 .storyboard-video,
 .thesis-poster,
-.thesis-video {
+.thesis-video,
+.thesis-pdf {
   width: 100%;
   max-width: 1000px;
   margin-left: auto;
@@ -420,6 +438,7 @@ body.zh-mode p.en {
 
 /* ----------------------------------------
    PDF
+   Storyboard / Thesis Storyboard
 ---------------------------------------- */
 
 .storyboard-project {
@@ -433,16 +452,21 @@ body.zh-mode p.en {
   font-weight: 500;
 }
 
-.storyboard-pdf {
+/* PDF Preview Window */
+
+.storyboard-pdf,
+.thesis-pdf {
+  display: block;
   width: 100%;
   max-width: 1000px;
-  aspect-ratio: 16 / 9;
-  margin: 25px auto 30px;
+  height: 750px;
+  margin: 30px auto;
   overflow: hidden;
-  background: #e5e2dc;
+  background: #f5f5f5;
 }
 
-.storyboard-pdf iframe {
+.storyboard-pdf iframe,
+.thesis-pdf iframe {
   display: block;
   width: 100%;
   height: 100%;
@@ -471,6 +495,7 @@ body.zh-mode p.en {
 /* PDF Link */
 
 .pdf-link {
+  width: 100%;
   max-width: 1000px;
   margin: 15px auto 50px;
   text-align: right;
@@ -611,8 +636,13 @@ body.zh-mode p.en {
   }
 
   .storyboard-project h2,
-  .storyboard-video h2 {
+  .storyboard-video h2,
+  .thesis-section h2 {
     font-size: 23px;
+  }
+
+  .thesis-section {
+    margin-bottom: 65px;
   }
 
   .thesis-poster {
@@ -622,6 +652,13 @@ body.zh-mode p.en {
   .storyboard-video,
   .thesis-video {
     margin-bottom: 65px;
+  }
+
+  /* PDF on mobile */
+
+  .storyboard-pdf,
+  .thesis-pdf {
+    height: 550px;
   }
 
 }
@@ -656,37 +693,4 @@ body.zh-mode p.en {
     padding-right: 5vw;
   }
 
-  .storyboard-pdf {
-    aspect-ratio: 4 / 3;
-  }
-
-}
-
-/* Thesis Storyboard PDF */
-.thesis-pdf {
-  width: 100%;
-  max-width: 1000px;
-  aspect-ratio: 16 / 9;
-  margin: 30px auto;
-  overflow: hidden;
-  background: #f5f5f5;
-}
-
-.thesis-pdf iframe {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-/* PDF Link */
-.pdf-link {
-  max-width: 1000px;
-  margin: 15px auto 50px;
-  text-align: right;
-}
-
-.pdf-link a {
-  text-decoration: underline;
-  cursor: pointer;
 }
